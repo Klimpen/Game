@@ -1,29 +1,36 @@
 
 public class Cell {
 	private boolean passable, occupied;
-	public Cell(){
+	private int x, y;
+	public Cell(int xIn, int yIn){
+		x = xIn;
+		y = yIn;
 		passable = true;
 		occupied = false;
 	}
 	
-	public boolean setPassable(boolean passableIn){
+	public void setPassable(boolean passableIn){
 		passable = passableIn;
-		return true;
 	}
 	
 	public boolean getPassable(){
 		return passable;
 	}
 	
-	public boolean setOccupied(boolean occupiedIn){
+	public void setOccupied(boolean occupiedIn){
 		occupied = occupiedIn;
-		if(this.setPassable(occupiedIn)){
-			return true;
-		}
-		return false;
+		passable = !occupiedIn;
 	}
 	
 	public boolean getOccupied(){
 		return occupied;
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
 	}
 }

@@ -11,16 +11,15 @@ public class Engine {
 	
 	/* 
 	 * 
-	 * 6s turns
+	 * 8s turns
 	 * 
 	 * 		1 Move/turn unit.moveUnit()
 	 * 		1 Ability/turn unit.doAbility()
 	 * 
-	 * 		3 Unit/player
+	 * 		4 Unit/player
 	 * 		4 Ability/unit
-	 * 		1 'Attack'/unit
 	 * 
-	 * Rune ability system UI.setAbility()
+	 * Rune ability system Interface.setAbility()
 	 * 
 	 * Multiplayer
 	 * 
@@ -58,6 +57,8 @@ public class Engine {
 		userInterface = new Interface();
 		renderer = new Renderer(userInterface, map);
 		listener = new Listener();
+		
+		renderer.render();
 	}
 
 	public static void main(String[] args) {
