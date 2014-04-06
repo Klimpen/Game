@@ -9,16 +9,9 @@ public class Map {
 		map = new Cell[getxMax()][yMax];
 		for(int i=0; i<yMax; i++){
 			for(int j=0; j<getxMax(); j++){
-				map[j][i] = new Cell(j, i);
+				map[j][i] = new Cell(j, i, true);
 			}
 		}
-	}
-	
-	public String move(Cell fromCell, Cell toCell){
-		//TODO
-		// must check legality of path
-		// returns string which unit would move
-		return null;
 	}
 	
 	public Cell getCell(int xIn, int yIn){

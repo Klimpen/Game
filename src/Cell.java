@@ -1,29 +1,38 @@
+import java.util.InputMismatchException;
+
 
 public class Cell {
-	private boolean passable, occupied;
 	private int x, y;
-	public Cell(int xIn, int yIn){
+	private Unit unit;
+	private boolean passable;
+	
+	public Cell(int xIn, int yIn, boolean passableIn){
 		x = xIn;
 		y = yIn;
-		passable = true;
-		occupied = false;
-	}
-	
-	public void setPassable(boolean passableIn){
+		unit = null;
 		passable = passableIn;
 	}
 	
 	public boolean getPassable(){
+		if(unit!=null){
+			return false;
+		}
 		return passable;
 	}
 	
-	public void setOccupied(boolean occupiedIn){
-		occupied = occupiedIn;
-		passable = !occupiedIn;
+	public void setOccupied(Unit unitIn){
+		unit=unitIn;
+	}
+	
+	public void setEmpty(){
+		unit=null;
 	}
 	
 	public boolean getOccupied(){
-		return occupied;
+		if(unit!=null){
+			return true;
+		}
+		return false;
 	}
 	
 	public int getX(){
@@ -32,5 +41,12 @@ public class Cell {
 	
 	public int getY(){
 		return y;
+	}
+
+	public Unit getUnit() {
+		if(unit==null){
+			throw new InputMismatchException();
+		}
+		return unit;
 	}
 }

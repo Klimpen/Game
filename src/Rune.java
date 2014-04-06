@@ -1,13 +1,16 @@
+import java.util.List;
 
-public class Rune {
-	int runeNum;
-	public Rune(int runeIn){
-		runeNum = runeIn;
-	}
+
+public abstract class Rune {
 	
-	public String getText() {
-		// TODO
-		// returns a String detailing what this rune does
-		return null;
+	protected int variable; 
+	
+	public abstract List<Cell> activate(List<Cell> cellListIn);
+	
+	private double triangulateDistance(Cell cellA, Cell cellB){
+		return Math.sqrt(Math.abs(cellA.getX()-cellB.getX()) * 
+				Math.abs(cellA.getX()-cellB.getX()) +
+				Math.abs(cellA.getX()-cellB.getX()) * 
+				Math.abs(cellA.getX()-cellB.getX()));
 	}
 }

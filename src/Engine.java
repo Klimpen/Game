@@ -1,10 +1,5 @@
 import java.io.*;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
+import java.util.*;
 
 
 public class Engine {
@@ -51,14 +46,23 @@ public class Engine {
 	
 	public Engine(){
 		map = new Map(32, 32); // TODO input prebuilt maps
-		unitA = new Unit(); // TODO input prebuilt units
-		unitB = new Unit();
-		unitC = new Unit();
+		unitA = new Unit(""); // TODO input prebuilt units
+		unitB = new Unit("");
+		unitC = new Unit("");
 		userInterface = new Interface();
 		renderer = new Renderer(userInterface, map);
 		listener = new Listener();
-		
 		renderer.render();
+	}
+	
+	public void input(){
+		// example
+		// on keypress equiv. ability A with unitA highlighted, activates ability A
+		// pushes an arraylist with the unit's cell at 0 and the mouse's cell at 1
+		List<Cell> temp = new ArrayList<Cell>();
+		temp.add(map.getCell(unitA.getX(), unitA.getY()));
+		temp.add(map.getCell(listener.getMouseX(), listener.getMouseY()));
+		unitA.getA().activateAbility(temp);
 	}
 
 	public static void main(String[] args) {
