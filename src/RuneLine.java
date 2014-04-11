@@ -14,6 +14,13 @@ public class RuneLine {
 		String[] splitInput = input.split(" ");
 		Rune[] runeArray = new Rune[10];
 		int i = 0;
+		
+		if(splitInput[0]=="EffectBuffRune token"){
+			// for the specific case of a rune which holds a runeline which is applied on trigger which is the last rune before this subRuneLine
+			runeArray[0] = new RuneLineHolder(null, createRuneLine(input.substring(splitInput[0].length())));
+			return runeArray;
+		}
+		
 		for(int counter = 0; counter<splitInput.length; counter++){
 			switch(Integer.valueOf(splitInput[counter])){
 				// list all all potential runes

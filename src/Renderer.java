@@ -1,12 +1,16 @@
+import java.awt.Point;
 
 public class Renderer {
+	
+	Engine engine;
 
-	public Renderer(Interface userInterface, Map map) {
-		// TODO Auto-generated constructor stub
+	public Renderer(Engine engineIn) {
+		engine = engineIn;
 	}
 
-	public void render() {
-		// TODO Auto-generated method stub
+	public Cell get(Point locationOnScreen) {
+		// TODO
+		return null;
 	}
 
 }

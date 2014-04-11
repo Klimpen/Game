@@ -4,9 +4,11 @@ public class Map {
 	private Cell[][] map;
 	
 	public Map(int xIn, int yIn){
+		
 		xMax = xIn;
 		yMax = yIn;
 		map = new Cell[xMax][yMax];
+		
 		for(int i=0; i<yMax; i++){
 			for(int j=0; j<xMax; j++){
 				map[j][i] = new Cell(j, i, true);
@@ -24,5 +26,9 @@ public class Map {
 
 	public int getYMax(){
 		return yMax;
+	}
+
+	public int distance(Cell cellInA, Cell cellInB) {
+		return Math.abs(cellInA.getX()-cellInB.getX())+Math.abs(cellInA.getY()-cellInB.getY());
 	}
 }

@@ -1,15 +1,44 @@
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.*;
+
 
 public class Listener {
-
-	// parses input from user
-
-	public int getMouseX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	JPanel p = new JPanel(){};
+	Engine engine;
 	
-	public int getMouseY() {
-		// TODO Auto-generated method stub
-		return 0;
+	public Listener(Engine engineIn){
+		engine = engineIn;
+		p.addMouseListener(new MouseListener(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				engine.input(e.getLocationOnScreen());
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}});
 	}
 }

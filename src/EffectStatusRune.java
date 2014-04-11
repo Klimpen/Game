@@ -48,5 +48,4 @@ public class EffectStatusRune extends Rune {
 		}
 		return cellListIn;
 	}
-
 }

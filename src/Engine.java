@@ -1,3 +1,4 @@
+import java.awt.Point;
 import java.io.*;
 import java.util.*;
 
@@ -37,32 +38,55 @@ public class Engine {
 	 */
 	
 	private Map map;
-	private Unit unitA;
-	private Unit unitB;
-	private Unit unitC;
-	private Interface userInterface;
+	private UserInterface userInterface;
 	private Renderer renderer;
 	private Listener listener;
+	private List<Unit> unitList = new ArrayList<Unit>();
 	
 	public Engine(){
+		userInterface = new UserInterface(this);
+		renderer = new Renderer(this);
+		listener = new Listener(this);
+
 		map = new Map(32, 32); // TODO input prebuilt maps
-		unitA = new Unit(""); // TODO input prebuilt units
-		unitB = new Unit("");
-		unitC = new Unit("");
-		userInterface = new Interface();
-		renderer = new Renderer(userInterface, map);
-		listener = new Listener();
-		renderer.render();
+		Scanner scn = new Scanner("unit.txt");
+		while(scn.hasNextLine()){
+			unitList.add(new Unit(scn.nextLine()));
+		}
+		scn.close();
 	}
 	
-	public void input(){
+	public void input(Point point){
 		// TODO Example
 		// on keypress ability A with unitA highlighted, activates ability A
 		// pushes an arraylist with the unit's cell at 0 and the mouse's cell at 1
 	}
 
+	//==Getters==
+	
+	public List<Unit> getUnitList(){
+		return unitList;
+	}
+	
+	public Listener getListener(){
+		return listener;
+	}
+
+	public Renderer getRenderer() {
+		return renderer;
+	}
+	
+	public UserInterface getUserInterface(){
+		return userInterface;
+	}
+	
+	public Map getMap(){
+		return map;
+	}
+	
+	//===Main Below===
+	
 	public static void main(String[] args) {
 		new Engine();
 	}
-	
 }
