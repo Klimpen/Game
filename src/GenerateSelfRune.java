@@ -3,8 +3,8 @@ import java.util.*;
 
 public class GenerateSelfRune extends Rune {
 
-	public GenerateSelfRune(String variableIn, String numRequirementsIn) {
-		super(variableIn, numRequirementsIn);
+	public GenerateSelfRune(String variableIn) {
+		super(variableIn);
 	}
 
 	public List<Cell> activate(List<Cell> cellListIn) {

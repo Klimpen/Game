@@ -2,8 +2,8 @@ import java.util.List;
 
 public class GenerateRandomRune extends Rune {
 
-	public GenerateRandomRune(String variableIn, String numRequirementsIn){
-		super(variableIn, numRequirementsIn);
+	public GenerateRandomRune(String variableIn) {
+		super(variableIn);
 	}
 	
 	public List<Cell> activate(List<Cell> cellListIn){

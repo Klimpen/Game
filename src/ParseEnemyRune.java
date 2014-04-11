@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ParseEnemyRune extends Rune {
 
-	public ParseEnemyRune(String variableIn, String numRequirementsIn){
-		super(variableIn, numRequirementsIn);
+	public ParseEnemyRune(String variableIn) {
+		super(variableIn);
 	}
 	
 	public List<Cell> activate(List<Cell> cellListIn){

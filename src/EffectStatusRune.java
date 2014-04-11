@@ -4,8 +4,9 @@ import java.util.List;
 public class EffectStatusRune extends Rune {
 	private String type;
 	
-	public EffectStatusRune(String variableIn, String numRequirementsIn, String typeIn){
-		super(variableIn, numRequirementsIn);
+	public EffectStatusRune(String variableIn, String typeIn){
+		// variable is duration
+		super(variableIn);
 		type = typeIn;
 	}
 	

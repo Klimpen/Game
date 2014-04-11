@@ -4,8 +4,8 @@ import java.util.List;
 
 public class ParseFriendlyRune extends Rune {
 
-	public ParseFriendlyRune(String variableIn, String numRequirementsIn){
-		super(variableIn, numRequirementsIn);
+	public ParseFriendlyRune(String variableIn) {
+		super(variableIn);
 	}
 	
 	public List<Cell> activate(List<Cell> cellListIn){

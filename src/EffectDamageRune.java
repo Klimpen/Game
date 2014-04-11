@@ -2,8 +2,8 @@ import java.util.List;
 
 public class EffectDamageRune extends Rune {
 
-	public EffectDamageRune(String variableIn, String numRequirementsIn){
-		super(variableIn, numRequirementsIn);
+	public EffectDamageRune(String variableIn) {
+		super(variableIn);
 	}
 
 	public List<Cell> activate(List<Cell> cellListIn) {
