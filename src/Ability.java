@@ -13,7 +13,7 @@ public class Ability {
 		// TODO add more
 		String[] splitInput = input.split(" ");
 		for(int counter = 0; counter<splitInput.length; counter++){
-			switch(Integer.valueOf(input.substring(counter,++counter))){
+			switch(Integer.valueOf(splitInput[counter])){
 			case 0: runeList.add(new GenerateRandomRune(null, "0")); break;
 			case 1: runeList.add(new GenerateSelfRune(null, "0")); break;
 			
