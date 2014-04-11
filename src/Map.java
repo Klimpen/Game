@@ -6,9 +6,9 @@ public class Map {
 	public Map(int xIn, int yIn){
 		xMax = xIn;
 		yMax = yIn;
-		map = new Cell[getxMax()][yMax];
+		map = new Cell[xMax][yMax];
 		for(int i=0; i<yMax; i++){
-			for(int j=0; j<getxMax(); j++){
+			for(int j=0; j<xMax; j++){
 				map[j][i] = new Cell(j, i, true);
 			}
 		}
@@ -18,11 +18,11 @@ public class Map {
 		return map[xIn][yIn];
 	}
 
-	public int getxMax(){
+	public int getXMax(){
 		return xMax;
 	}
 
-	public int getyMax(){
+	public int getYMax(){
 		return yMax;
 	}
 }

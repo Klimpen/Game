@@ -4,6 +4,10 @@ import java.util.List;
 
 public class ParseFriendlyRune extends Rune {
 
+	public ParseFriendlyRune(String variableIn, String numRequirementsIn){
+		super(variableIn, numRequirementsIn);
+	}
+	
 	public List<Cell> activate(List<Cell> cellListIn){
 		List<Cell> cellListOut = new ArrayList<Cell>();
 		for(int i=cellListIn.size(); i<1; i++){

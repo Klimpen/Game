@@ -1,16 +1,14 @@
 import java.util.List;
 
-
 public class EffectDamageRune extends Rune {
 
-	
-	public EffectDamageRune(){
-		variable = 50;
+	public EffectDamageRune(String variableIn, String numRequirementsIn){
+		super(variableIn, numRequirementsIn);
 	}
 
 	public List<Cell> activate(List<Cell> cellListIn) {
-		for(int i=0; i<cellListIn.size(); i++){
-			cellListIn.get(i).getUnit().setCurrentHP(cellListIn.get(i).getUnit().getCurrentHP()-variable);
+		for(Cell i:cellListIn){
+			i.getUnit().setCurrentHP(i.getUnit().getCurrentHP()-variable);
 		}
 		return cellListIn;
 	}

@@ -4,7 +4,12 @@ import java.util.List;
 
 public class ParseEnemyRune extends Rune {
 
+	public ParseEnemyRune(String variableIn, String numRequirementsIn){
+		super(variableIn, numRequirementsIn);
+	}
+	
 	public List<Cell> activate(List<Cell> cellListIn){
+		// iterates through the cellList and creates 
 		List<Cell> cellListOut = new ArrayList<Cell>();
 		for(int i=cellListIn.size(); i<1; i++){
 			if(cellListIn.get(0).getUnit().getFaction()!=cellListIn.get(i).getUnit().getFaction()){
